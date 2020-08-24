@@ -48,5 +48,10 @@ namespace PlannerAppShared.Services
             var response = await client.GetProtectedAsync<PlansCollectionPagingResponse>($"{_baseUrl}/api/plans/search?query={query}&page={page}");
             return response.Result;
         }
+
+        public async Task<PlanSingleResponse> PostPlanAsync(PlanRequest mode)
+        {
+            var response = await client.SendFormProtectedAsync<PlanRequest>()
+        }
     }
 }
