@@ -1,0 +1,147 @@
+﻿@page "/plans"
+@page "/plans/{pageNumber:int}"
+
+@attribute [Authorize]
+@inject PlanService planService
+
+@if (string.IsNullOrEmpty(query))
+{
+    <h2>My Plans. Page: @pageNumber</h2>
+}
+else
+{
+    <h2>Results for "@query"</h2>
+}
+
+
+@if (isBusy)
+{
+    <h2>Loading...</h2>
+}
+else
+{
+    <div class="row">
+        <RadzenTextBox Placeholder="Search Query" @bind-Value="query"></RadzenTextBox>
+        <RadzenButton Text="Search" Click="async () => await getPlansAsync()"></RadzenButton>
+
+    </div>
+    <hr />
+
+
+    <div class="row">
+        @foreach (var plan in plans)
+        {
+            <div class="col-4">
+
+                <RadzenCard Style="margin:10px">
+                    <img src="@plan.CoverPath" style="width: 90%; margin:5px;" />
+                    <h2>@plan.Title</h2>
+                    <p>@plan.Description</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <RadzenButton ButtonStyle="Radzen.ButtonStyle.Success" Text="Edit" class="btn-block"></RadzenButton>
+                        </div>
+                        <div class="col-6">
+                            <RadzenButton ButtonStyle="Radzen.ButtonStyle.Danger" Text="Delete" class="btn-block"></RadzenButton>
+                        </div>
+                    </div>
+                </RadzenCard>
+            </div>
+        }
+    </div>
+
+
+    <hr />
+
+    <div class="row">
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            int page = i;
+            @if (i == pageNumber)
+            {
+                <RadzenButton ButtonStyle="Radzen.ButtonStyle.Info"
+                              Text="@i.ToString()"
+                              Style="margin:8px;"
+                              Click="async ()=> await MoveToPageAsync(page)"
+                              Disabled="true">
+
+                </RadzenButton>
+            }
+            else
+            {
+                <RadzenButton ButtonStyle="Radzen.ButtonStyle.Info"
+                              Text="@i.ToString()"
+                              Style="margin:8px;"
+                              Click="async ()=> await MoveToPageAsync(page)">
+
+                </RadzenButton>
+            }
+        }
+
+    </div>
+}
+@code {
+
+    [Parameter]
+    public int? pageNumber { set; get; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    bool isBusy = false;
+    List<Plan> plans = new List<Plan>();
+    int totalPages = 1;
+
+    [Parameter]
+    public string query { get; set; }
+
+
+    public async Task getPlansAsync()
+    {
+        isBusy = true;
+
+        var userState = authenticationState.Result;
+        planService.AccessToken = userState.User.FindFirst("AccessToken").Value;
+
+        if (pageNumber == null)
+        {
+            pageNumber = 1;
+        }
+
+        PlansCollectionPagingResponse result;
+        if (string.IsNullOrEmpty(query))
+        {
+            result = await planService.GetAllPlansByPageAsync(pageNumber.Value);
+        }
+        else
+        {
+            result = await planService.SearchPlansByPageAsync(query, pageNumber.Value);
+        }
+
+        if (result.Count % result.PageSize == 0)
+        {
+            totalPages = result.Count / result.PageSize;
+        }
+        else
+        {
+            totalPages = (result.Count / result.PageSize) + 1;
+        }
+
+        plans = result.Records.ToList();
+
+        isBusy = false;
+    }
+
+    public async Task MoveToPageAsync(int newPageNumber)
+    {
+        pageNumber = newPageNumber;
+        await getPlansAsync();
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await getPlansAsync();
+    }
+
+}

@@ -1,0 +1,84 @@
+﻿@page "/auth/register"
+@layout AuthLayout
+@inject AuthenticationService authService
+@inject NavigationManager navigationManager
+
+
+<div class="row">
+    <div class="col-12">
+        <h2>Create a new account</h2>
+        <EditForm Model="model" OnValidSubmit="registerUser">
+            <RadzenCard>
+                <AlertMessage Message="@message" MessageType="@messageType"></AlertMessage>
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <label>First name:</label>
+                <RadzenTextBox @bind-Value="model.FirstName"></RadzenTextBox>
+
+                <label>Last name:</label>
+                <RadzenTextBox @bind-Value="model.LastName"></RadzenTextBox>
+
+                <label>Email address:</label>
+                <RadzenTextBox @bind-Value="model.Email"></RadzenTextBox>
+
+                <label>Password:</label>
+                <RadzenPassword @bind-Value="model.Password"></RadzenPassword>
+
+                <label>Confirm password:</label>
+                <RadzenPassword @bind-Value="model.ConfirmPassword"></RadzenPassword>
+
+                <hr />
+                <RadzenButton ButtonType="Radzen.ButtonType.Submit"
+                              Text="Register"
+                              Disabled="isBusy"
+                              ButtonStyle="Radzen.ButtonStyle.Primary"
+                              class="btn-block mr-2">
+
+                </RadzenButton>
+
+                <RadzenButton ButtonType="Radzen.ButtonType.Button"
+                              Text="Login"
+                              Disabled="isBusy"
+                              Click="goToLogin"
+                              ButtonStyle="Radzen.ButtonStyle.Secondary"
+                              class="btn-block mr-2">
+
+                </RadzenButton>
+            </RadzenCard>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    RegisterRequest model = new RegisterRequest();
+    bool isBusy = false;
+    string message = string.Empty;
+    PlannerAppClient.Models.AlertMessageType messageType = Models.AlertMessageType.Success;
+
+    public async Task registerUser()
+    {
+        isBusy = true;
+
+        var result = await authService.RegisterUserAsync(model);
+        if (result.IsSuccess)
+        {
+            message = result.Message;
+            messageType = Models.AlertMessageType.Success;
+        }
+        else
+        {
+            message = result.Errors.FirstOrDefault() ?? result.Message;
+            messageType = Models.AlertMessageType.Error;
+        }
+        isBusy = false;
+        navigationManager.NavigateTo("/home");
+
+    }
+
+    public void goToLogin()
+    {
+        navigationManager.NavigateTo("/auth/login");
+    }
+
+}

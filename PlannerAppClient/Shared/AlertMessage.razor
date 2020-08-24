@@ -1,0 +1,46 @@
+﻿
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert @alertClass">@Message <button type="reset" class="alert-info" @onclick="hideMessage">x</button> </div>
+}
+
+
+@code {
+    [Parameter]
+    public string Message { get; set; }
+
+    private PlannerAppClient.Models.AlertMessageType messageType;
+
+    [Parameter]
+    public PlannerAppClient.Models.AlertMessageType MessageType
+    {
+        get => messageType;
+        set
+        {
+            messageType = value;
+            switch (messageType)
+            {
+                case Models.AlertMessageType.Error:
+                    alertClass = "alert-danger";
+                    break;
+
+                case Models.AlertMessageType.Success:
+                    alertClass = "alert-success";
+                    break;
+
+                case Models.AlertMessageType.Warning:
+                    alertClass = "alert-warning";
+                    break;
+
+                default: break;
+            }
+        }
+    }
+
+    string alertClass = "aler-info";
+
+    public void hideMessage()
+    {
+        Message = string.Empty;
+    }
+}

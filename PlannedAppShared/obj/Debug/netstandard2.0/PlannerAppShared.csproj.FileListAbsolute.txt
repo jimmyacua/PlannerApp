@@ -1,0 +1,9 @@
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\bin\Debug\netstandard2.0\PlannerAppShared.deps.json
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\bin\Debug\netstandard2.0\PlannerAppShared.dll
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.csprojAssemblyReference.cache
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.AssemblyInfoInputs.cache
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.AssemblyInfo.cs
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\bin\Debug\netstandard2.0\PlannerAppShared.pdb
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.dll
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.pdb
+C:\Users\datacostarica\source\repos\PlannerAppClient\PlannedAppShared\obj\Debug\netstandard2.0\PlannerAppShared.csproj.CoreCompileInputs.cache
