@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PlannerAppShared.Services;
 using Blazored.LocalStorage;
+using Tewr.Blazor.FileReader;
 
 namespace PlannerAppClient
 {
@@ -25,6 +26,10 @@ namespace PlannerAppClient
             builder.Services.AddScoped<PlanService>(s =>
             {
                 return new PlanService(URL);
+            });
+            builder.Services.AddFileReaderService(options =>
+            {
+                options.UseWasmSharedBuffer = true;
             });
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddOptions();

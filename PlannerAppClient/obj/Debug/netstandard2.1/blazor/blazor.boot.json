@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "PlannerAppClient.dll": "sha256-i94ch4J4q5rWbvsGqvtiNHbJOzTyIIq2hmEp9blzb9Y=",
+      "PlannerAppClient.dll": "sha256-maROnhzxMppaMPqc8Lk+viKar31ENFGBRN0D2x1cYdg=",
       "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -54,7 +54,8 @@
       "Microsoft.JSInterop.dll": "sha256-XFbAHBcZNYlz6PL+SGdEip24fiaqva+7Umq8VeSsots=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-XR0ovsWHMInelJx0wdN2v0xH\/LJF18\/lAx9gsLcqCwA=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-5PQXYy2FLSDcNc4B9bl74TWsx7WuZ4TnRcQa9UUnzL8=",
-      "PlannerAppShared.dll": "sha256-F\/CIu2fjg0HSCDy+3i109xFXP7JmY2VZ69TbaK9ISp0=",
+      "Tewr.Blazor.FileReader.dll": "sha256-+8JsYr0nQtK1U5Ora9CZpNOUQSOY7TzFoOmWTAOtAW4=",
+      "PlannerAppShared.dll": "sha256-Vp8MDPDl8Z5yb1w6c+K4l34FvgJ7T1kVHgYqBQYhufo=",
       "AKSoftware.WebApi.dll": "sha256-7JWNVz0\/Dx6CjuIiqs\/zeGmCpfmlWSvTC4XtlejArZA=",
       "Newtonsoft.Json.dll": "sha256-gkIipvi93hhq6PE+WvoKU82xCfBcfl2PTHNjD3enxt4=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-sifIvl02zqfSiv67ZRAsSa+NCvhMgTGrIUNuK8LmCNM=",
@@ -72,9 +73,9 @@
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-b2fZWaaVPbblqeCDluFvt5eg6tWY9u2szMvAzJpD8OM="
     },
     "pdb": {
-      "PlannerAppClient.pdb": "sha256-VnjKK2gmC5Svttz9jH51rfNesPF5YQ9zt4fMk9\/e6nQ=",
+      "PlannerAppClient.pdb": "sha256-0IRNX0zlYQY\/ZPlxsGMckO2JfD55wJY7EUD4jp7PAKk=",
       "System.Linq.Dynamic.Core.pdb": "sha256-TUdNbGDz+ogqJea4nbn9e5NAJa8g20Wv3as0sLQ8J+o=",
-      "PlannerAppShared.pdb": "sha256-zPa4I2PSNi2gSN8U+Q\/oOvA89cCoz1x4WrRsxgosEUo="
+      "PlannerAppShared.pdb": "sha256-HMP9DG1Z6QzHHybB\/Ur4SgWnUkKW4i6aEC6nxOsRdeI="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",

@@ -119,6 +119,13 @@ using Microsoft.AspNetCore.Authorization;
 #line hidden
 #nullable disable
 #nullable restore
+#line 17 "C:\Users\datacostarica\source\repos\PlannerAppClient\PlannerAppClient\_Imports.razor"
+using Tewr.Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\datacostarica\source\repos\PlannerAppClient\PlannerAppClient\App.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 

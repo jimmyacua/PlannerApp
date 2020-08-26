@@ -8,6 +8,8 @@ namespace PlannerAppShared.Models
 {
     public class PlanRequest
     {
+
+        public string Id { set; get; }
         [Required]
         [StringLength(100)]
         public string Title { set; get; }
@@ -16,5 +18,7 @@ namespace PlannerAppShared.Models
         public string Description { get; set; }
 
         public Stream CoverFile { get; set; }
+
+        public string FileName { get; set; }
     }
 }

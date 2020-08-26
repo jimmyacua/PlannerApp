@@ -125,6 +125,13 @@ using Microsoft.AspNetCore.Authorization;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 17 "C:\Users\datacostarica\source\repos\PlannerAppClient\PlannerAppClient\_Imports.razor"
+using Tewr.Blazor.FileReader;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
     public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
     {

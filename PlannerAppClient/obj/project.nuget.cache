@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "S2jNOuOmw4b4QrYU0dNkYzvKdIa6qIiiezZVNCbcmj5GRcTX/CUvNprOAlv4WL92WDL5NHC40RjU0U/lK4tVrQ==",
+  "dgSpecHash": "6n/pExOW/XxhMa59/6kvFfZ4jrbGuA8qVYgAzb4ZlpAn0Qi1RFYNWBF+FH02P8UsX26TAfkRq58f4DUeJfobFA==",
   "success": true,
   "projectFilePath": "C:\\Users\\datacostarica\\source\\repos\\PlannerAppClient\\PlannerAppClient\\PlannerAppClient.csproj",
   "expectedPackageFiles": [
@@ -57,7 +57,8 @@
     "C:\\Users\\datacostarica\\.nuget\\packages\\system.text.encodings.web\\4.7.1\\system.text.encodings.web.4.7.1.nupkg.sha512",
     "C:\\Users\\datacostarica\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\datacostarica\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\datacostarica\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\datacostarica\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\datacostarica\\.nuget\\packages\\tewr.blazor.filereader\\2.0.0.20200\\tewr.blazor.filereader.2.0.0.20200.nupkg.sha512"
   ],
   "logs": []
 }

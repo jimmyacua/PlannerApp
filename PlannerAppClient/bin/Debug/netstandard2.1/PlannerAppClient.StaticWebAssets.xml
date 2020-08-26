@@ -1,4 +1,5 @@
 ﻿<StaticWebAssets Version="1.0">
   <ContentRoot BasePath="/" Path="C:\Users\datacostarica\source\repos\PlannerAppClient\PlannerAppClient\bin\Debug\netstandard2.1\wwwroot\" />
   <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\datacostarica\.nuget\packages\radzen.blazor\2.11.12\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Tewr.Blazor.FileReader" Path="C:\Users\datacostarica\.nuget\packages\tewr.blazor.filereader\2.0.0.20200\build\..\staticwebassets\" />
 </StaticWebAssets>
